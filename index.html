@@ -331,6 +331,169 @@ section {
   font-size: 14px;
 }
 
+/* ── BIO ── */
+.bio-section {
+  background: var(--cream-dark);
+  padding: 96px 80px;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 72px;
+  align-items: start;
+  margin-top: 52px;
+}
+
+.bio-left {
+  position: sticky;
+  top: 88px;
+}
+
+.bio-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+
+.bio-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.bio-title-line {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.bio-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bio-contact-list li {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.bio-contact-list a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.35);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.bio-contact-list a:hover {
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+.bio-rule {
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 28px;
+  border-radius: 2px;
+}
+
+.bio-body {
+  font-size: 15.5px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+
+.bio-body:last-of-type {
+  margin-bottom: 36px;
+}
+
+.bio-cred-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+.bio-cred-card {
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+  padding: 14px 16px;
+  border-radius: 0 2px 2px 0;
+}
+
+.bio-cred-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+
+.bio-cred-value {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.bio-reg-block {
+  max-width: 640px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.bio-reg-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 12px;
+}
+
+.bio-reg-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.bio-reg-pill {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 4px 11px;
+  letter-spacing: 0.04em;
+}
+
 /* ── MODEL ── */
 .model-section {
   background: var(--cream);
@@ -774,6 +937,10 @@ footer {
   .hero { padding: 100px 32px 200px; }
   .hero-stats { right: 32px; bottom: 52px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bio-section { padding: 64px 32px; }
+  .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bio-left { position: static; }
+  .bio-cred-grid { grid-template-columns: 1fr; }
   .model-cards { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .serve-grid { grid-template-columns: 1fr 1fr; }
@@ -789,6 +956,7 @@ footer {
   <a href="#" class="nav-brand">SCGRC <span>Stony Creek</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#founder">Founder</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#clients">Who We Serve</a></li>
     <li><a href="#engagement">Engagement</a></li>
@@ -882,6 +1050,106 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- FOUNDER BIO — new section                      -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="gold-rule"></div>
+<section class="bio-section" id="founder">
+  <div class="section-label">About the Founder</div>
+  <h2 class="section-title">Daniel Dwyer — <em>Attorney, CCO,<br>and Compliance Architect</em></h2>
+
+  <div class="bio-grid">
+
+    <!-- LEFT: avatar + contact -->
+    <div class="bio-left">
+      <div class="bio-avatar">DD</div>
+      <div class="bio-name">Daniel Dwyer</div>
+      <div class="bio-title-line">Founder &amp; Principal &nbsp;·&nbsp; J.D.</div>
+      <ul class="bio-contact-list">
+        <li><a href="mailto:ddwyer@stonycreekgrc.com">ddwyer@stonycreekgrc.com</a></li>
+        <li>(860) 575-1792</li>
+        <li><a href="https://stonycreekgrc.com">stonycreekgrc.com</a></li>
+        <li style="margin-top:4px;">
+          <a href="https://www.linkedin.com/company/stony-creek-governance-risk-and-compliance" target="_blank">LinkedIn &rarr;</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: bio narrative -->
+    <div class="bio-right">
+      <div class="bio-rule"></div>
+
+      <p class="bio-body">
+        Daniel Dwyer is the founder of Stony Creek GRC and one of the few compliance
+        practitioners in the alternative investments space who combines active licensure
+        as an attorney with more than two decades of hands-on CCO experience inside
+        hedge funds and private equity firms.
+      </p>
+
+      <p class="bio-body">
+        Most recently, Daniel served as Managing Director, Chief Compliance Officer and
+        Counsel at Portfolio Advisors — a global private markets firm with $85 billion in
+        AUM — where he led regulatory engagement with the SEC and CFTC, built enterprise
+        compliance programs across multiple global subsidiaries, and served as the primary
+        legal and regulatory advisor to the CEO and Board for over a decade.
+      </p>
+
+      <p class="bio-body">
+        Prior to Portfolio Advisors, Daniel served as General Counsel and CCO at Touradji
+        Capital Management (commodities-focused RIA), Sursum Capital Management, and AM
+        Investment Partners (long volatility and merger arbitrage) — managing everything
+        from fund document drafting and investor disclosures to international licensing,
+        including Hong Kong SFC registration.
+      </p>
+
+      <p class="bio-body">
+        Daniel founded SCGRC to bring that depth of senior, integrated expertise to
+        alternative investment managers and allocators who need a true compliance partner —
+        not a compliance vendor.
+      </p>
+
+      <!-- Credential cards -->
+      <div class="bio-cred-grid">
+        <div class="bio-cred-card">
+          <div class="bio-cred-label">Most Recent Role</div>
+          <div class="bio-cred-value">Managing Director, CCO &amp; Counsel<br>Portfolio Advisors ($85B AUM)</div>
+        </div>
+        <div class="bio-cred-card">
+          <div class="bio-cred-label">Experience</div>
+          <div class="bio-cred-value">20+ years across Hedge Funds,<br>Private Equity &amp; Credit</div>
+        </div>
+        <div class="bio-cred-card">
+          <div class="bio-cred-label">Legal Credentials</div>
+          <div class="bio-cred-value">J.D., Willamette University<br>CT &amp; NY Bar</div>
+        </div>
+        <div class="bio-cred-card">
+          <div class="bio-cred-label">Education</div>
+          <div class="bio-cred-value">B.A. American History<br>Connecticut College</div>
+        </div>
+      </div>
+
+      <!-- Regulatory jurisdictions -->
+      <div class="bio-reg-block">
+        <div class="bio-reg-label">Regulatory Jurisdictions</div>
+        <div class="bio-reg-pills">
+          <span class="bio-reg-pill">SEC</span>
+          <span class="bio-reg-pill">CFTC</span>
+          <span class="bio-reg-pill">FinCEN / OFAC</span>
+          <span class="bio-reg-pill">FINRA</span>
+          <span class="bio-reg-pill">MAS — Singapore</span>
+          <span class="bio-reg-pill">SFC — Hong Kong</span>
+          <span class="bio-reg-pill">DFSA — Dubai</span>
+          <span class="bio-reg-pill">FINMA — Switzerland</span>
+          <span class="bio-reg-pill">CSA — Canada</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="gold-rule"></div>
+<!-- ══════════════════════════════════════════════ -->
 
 <!-- MODEL -->
 <section class="model-section">
@@ -1127,3 +1395,4 @@ footer {
 
 </body>
 </html>
+
