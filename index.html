@@ -68,21 +68,33 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 28px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
   color: rgba(255,255,255,0.7);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-links a:hover { color: var(--gold); }
+
+.nav-links a.nav-highlight {
+  color: var(--gold);
+  border-bottom: 1px solid rgba(201,168,76,0.4);
+  padding-bottom: 1px;
+}
+
+.nav-links a.nav-highlight:hover {
+  border-color: var(--gold);
+}
 
 .nav-cta {
   background: transparent;
@@ -350,23 +362,6 @@ section {
   top: 88px;
 }
 
-.bio-avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 3px;
-  background: var(--navy);
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
-}
-
 .bio-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
@@ -606,6 +601,25 @@ section {
   background: var(--navy-mid);
 }
 
+.service-item.service-highlight {
+  border: 1px solid rgba(201,168,76,0.25);
+  position: relative;
+}
+
+.service-item.service-highlight::after {
+  content: 'NEW';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 3px 8px;
+  border-radius: 1px;
+}
+
 .service-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
@@ -645,6 +659,327 @@ section {
   border: 1px solid rgba(201,168,76,0.3);
   padding: 3px 9px;
   border-radius: 1px;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+
+.service-link:hover { border-color: var(--gold); }
+
+/* ── ODD SECTION ── */
+.odd-section {
+  background: var(--white);
+  padding: 96px 80px;
+}
+
+.odd-intro {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.odd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 52px;
+}
+
+.odd-card {
+  border: 1px solid var(--rule);
+  padding: 28px 26px;
+  background: var(--cream);
+  position: relative;
+}
+
+.odd-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+}
+
+.odd-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.odd-card-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.odd-how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.odd-how-block {
+  background: var(--navy-dark);
+  padding: 36px 40px;
+}
+
+.odd-how-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.odd-how-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.odd-how-body {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+}
+
+.odd-differentiator {
+  margin-top: 52px;
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  padding: 32px 40px;
+  max-width: 820px;
+}
+
+.odd-differentiator p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.65;
+}
+
+.odd-differentiator p strong {
+  font-style: normal;
+  color: var(--navy-dark);
+}
+
+/* ── COMPLIANCE SERVICES SECTION ── */
+.compliance-section {
+  background: var(--cream-dark);
+  padding: 96px 80px;
+}
+
+.compliance-intro {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.comp-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 32px;
+  position: relative;
+}
+
+.comp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gold);
+}
+
+.comp-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.comp-card-body {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ── LGRC TRANSFORMATION SECTION ── */
+.lgrc-section {
+  background: var(--navy-dark);
+  padding: 96px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lgrc-section::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.04) 100%);
+  pointer-events: none;
+}
+
+.lgrc-section .section-label { color: var(--gold); }
+.lgrc-section .section-title { color: #fff; }
+
+.lgrc-intro {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+
+.lgrc-callout {
+  border-left: 4px solid var(--gold);
+  padding: 24px 32px;
+  margin: 36px 0 52px;
+  max-width: 680px;
+  background: rgba(255,255,255,0.04);
+}
+
+.lgrc-callout p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+.lgrc-callout p strong {
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+.lgrc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  margin-bottom: 48px;
+}
+
+.lgrc-item {
+  background: rgba(18, 42, 80, 0.6);
+  padding: 32px 36px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s;
+}
+
+.lgrc-item:hover {
+  background: var(--navy-mid);
+}
+
+.lgrc-item-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+}
+
+.lgrc-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.lgrc-item-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+.lgrc-who {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 36px 40px;
+  margin-bottom: 40px;
+  max-width: 820px;
+}
+
+.lgrc-who-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.lgrc-who-body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+
+.lgrc-diff {
+  background: var(--gold);
+  padding: 36px 40px;
+  max-width: 820px;
+}
+
+.lgrc-diff-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+}
+
+.lgrc-diff-body {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--navy-dark);
+  line-height: 1.75;
 }
 
 /* ── WHO WE SERVE ── */
@@ -932,7 +1267,7 @@ footer {
 
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
-  .nav-links { gap: 20px; display: none; }
+  .nav-links { gap: 14px; display: none; }
   section { padding: 64px 32px; }
   .hero { padding: 100px 32px 200px; }
   .hero-stats { right: 32px; bottom: 52px; }
@@ -945,6 +1280,13 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .serve-grid { grid-template-columns: 1fr 1fr; }
   .engagement-grid { grid-template-columns: 1fr; }
+  .odd-section { padding: 64px 32px; }
+  .odd-grid { grid-template-columns: 1fr; }
+  .odd-how-grid { grid-template-columns: 1fr; }
+  .compliance-section { padding: 64px 32px; }
+  .compliance-grid { grid-template-columns: 1fr; }
+  .lgrc-section { padding: 64px 32px; }
+  .lgrc-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
 }
 </style>
@@ -958,6 +1300,7 @@ footer {
     <li><a href="#about">About</a></li>
     <li><a href="#founder">Founder</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#lgrc" class="nav-highlight">LGRC Transformation</a></li>
     <li><a href="#clients">Who We Serve</a></li>
     <li><a href="#engagement">Engagement</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -966,9 +1309,9 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-label">Stony Creek</div>
+  <div class="hero-label">Stony Creek GRC</div>
   <h1 class="hero-title">
-    Senior-level compliance expertise<br>
+    Executive-level compliance expertise<br>
     for <em>alternative investments</em>
   </h1>
   <p class="hero-tagline">
@@ -1002,14 +1345,14 @@ footer {
 <!-- LOGO SHOWCASE -->
 <section style="background:var(--white);padding:72px 80px;text-align:center;">
   <div style="max-width:400px;margin:0 auto;">
-    <img src="logo.svg" alt="Stony Creek" style="width:100%;height:auto;"/>
+    <img src="logo.svg" alt="Stony Creek GRC" style="width:100%;height:auto;"/>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="section-label">About the Firm</div>
-  <h2 class="section-title">Boutique. Senior. <em>Specialized.</em></h2>
+  <h2 class="section-title">Boutique. Executive. <em>Specialized.</em></h2>
   <div class="about-grid">
     <div class="about-left">
       <p class="section-body">
@@ -1023,6 +1366,11 @@ footer {
         family offices who need rigorous operational due diligence on the funds
         they evaluate. This dual-sided model gives SCGRC a uniquely comprehensive
         view of the alternative investments ecosystem.
+      </p>
+      <p class="section-body" style="margin-top:16px;">
+        For regulated enterprises facing significant change, SCGRC also provides
+        end-to-end LGRC transformation — redesigning Legal, Governance, Risk &amp;
+        Compliance functions from operating model through hands-on execution.
       </p>
     </div>
     <div class="about-right">
@@ -1054,23 +1402,33 @@ footer {
           Deep familiarity with Form ADV, Form PF, the SEC Marketing Rule, Reg S-P, and current enforcement priorities.
         </div>
       </div>
+      <div class="diff-item">
+        <div class="diff-diamond"></div>
+        <div class="diff-text">
+          <strong>Digital Transformation &amp; Legal Technology</strong>
+          Practical experience leveraging AI and legal technology to modernize compliance functions — increasing productivity, reducing manual workload, and scaling governance infrastructure.
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-diamond"></div>
+        <div class="diff-text">
+          <strong>LGRC Operating Model Design</strong>
+          End-to-end transformation of legal, governance, risk, and compliance functions — including org redesign, process optimization, and operating model build for global regulated enterprises.
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════ -->
-<!-- FOUNDER BIO — new section                      -->
-<!-- ══════════════════════════════════════════════ -->
+<!-- FOUNDER BIO -->
 <div class="gold-rule"></div>
 <section class="bio-section" id="founder">
   <div class="section-label">About the Founder</div>
   <h2 class="section-title">Daniel Dwyer — <em>Attorney, CCO,<br>and Compliance Architect</em></h2>
 
   <div class="bio-grid">
-
-    <!-- LEFT: avatar + contact -->
     <div class="bio-left">
-      <img src="headshot.jpg" alt="Daniel Dwyer — Founder, Stony Creek GRC" style="width:200px;height:267px;object-fit:cover;object-position:center top;border-radius:3px;border:2px solid var(--gold);margin-bottom:20px;display:block;">
+      <img src="headshot.jpg" alt="Daniel Dwyer — Founder, Stony Creek GRC" style="width:220px;height:auto;object-fit:cover;object-position:center top;border-radius:3px;border:2px solid var(--gold);margin-bottom:20px;display:block;">
       <div class="bio-name">Daniel Dwyer</div>
       <div class="bio-title-line">Founder &amp; Principal &nbsp;·&nbsp; Attorney-Trained CCO</div>
       <ul class="bio-contact-list">
@@ -1083,7 +1441,6 @@ footer {
       </ul>
     </div>
 
-    <!-- RIGHT: bio narrative -->
     <div class="bio-right">
       <div class="bio-rule"></div>
 
@@ -1097,26 +1454,36 @@ footer {
       <p class="bio-body">
         Most recently, Daniel served as Managing Director, Chief Compliance Officer and
         Counsel at Portfolio Advisors — a global private markets firm with $85 billion in
-        AUM — where he led regulatory engagement with the SEC and CFTC, built enterprise
-        compliance programs across multiple global subsidiaries, and served as the primary
-        legal and regulatory advisor to the CEO and Board for over a decade.
+        AUM — where he led end-to-end design and transformation of the firm's LGRC function,
+        scaling infrastructure alongside AUM growth from ~$20B to $85B over 12 years. He
+        served as primary legal and regulatory advisor to founders, CEO, and executive committee,
+        chaired the Compliance Committee, and directed regulatory strategy across SEC, CFTC,
+        FINRA, FinCEN, OFAC, and four international regulators simultaneously.
       </p>
 
       <p class="bio-body">
         Prior to Portfolio Advisors, Daniel served as General Counsel and CCO at Touradji
         Capital Management (commodities-focused RIA), Sursum Capital Management, and AM
-        Investment Partners (long volatility and merger arbitrage) — managing everything
-        from fund document drafting and investor disclosures to international licensing,
-        including Hong Kong SFC registration.
+        Investment Partners — managing governance and compliance programs across commodities,
+        long volatility, and long/short equity strategies, including international licensing
+        and registration in Hong Kong, Dubai, and Japan.
       </p>
 
       <p class="bio-body">
-        Daniel founded SCGRC to bring that depth of senior, integrated expertise to
-        alternative investment managers and allocators who need a true compliance partner —
-        not a compliance vendor.
+        Beyond traditional compliance, Daniel has led large-scale LGRC transformation
+        engagements — redesigning operating models, rationalizing governance structures,
+        and driving digital transformation within legal and compliance functions. This
+        includes serving as a member of Portfolio Advisors' AI Committee, leading the
+        design and build of an enterprise-wide AI governance programme and embedding
+        cybersecurity and digital privacy obligations into the firm's compliance framework.
       </p>
 
-      <!-- Credential cards -->
+      <p class="bio-body">
+        Daniel founded SCGRC to bring that depth of executive-level, integrated expertise
+        to alternative investment managers and regulated enterprises who need a true
+        compliance and governance partner — not a compliance vendor.
+      </p>
+
       <div class="bio-cred-grid">
         <div class="bio-cred-card">
           <div class="bio-cred-label">Most Recent Role</div>
@@ -1124,7 +1491,7 @@ footer {
         </div>
         <div class="bio-cred-card">
           <div class="bio-cred-label">Experience</div>
-          <div class="bio-cred-value">20+ years across Hedge Funds,<br>Private Equity &amp; Credit</div>
+          <div class="bio-cred-value">20+ years · Hedge Funds, PE,<br>Credit &amp; LGRC Transformation</div>
         </div>
         <div class="bio-cred-card">
           <div class="bio-cred-label">Legal Credentials</div>
@@ -1132,11 +1499,10 @@ footer {
         </div>
         <div class="bio-cred-card">
           <div class="bio-cred-label">Education</div>
-          <div class="bio-cred-value">B.A. American History<br>Connecticut College</div>
+          <div class="bio-cred-value">B.A. American History, Connecticut College<br>Cert. Comparative Law, East China Univ.</div>
         </div>
       </div>
 
-      <!-- Regulatory jurisdictions -->
       <div class="bio-reg-block">
         <div class="bio-reg-label">Regulatory Jurisdictions</div>
         <div class="bio-reg-pills">
@@ -1150,15 +1516,12 @@ footer {
           <span class="bio-reg-pill">FINMA — Switzerland</span>
           <span class="bio-reg-pill">CSA — Canada</span>
           <span class="bio-reg-pill">FCA — United Kingdom</span>
-          <span class="bio-reg-pill">CIMA — Cayman Islands</span>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 <div class="gold-rule"></div>
-<!-- ══════════════════════════════════════════════ -->
 
 <!-- MODEL -->
 <section class="model-section">
@@ -1202,7 +1565,7 @@ footer {
   <div class="section-label">Services</div>
   <h2 class="section-title" style="color:#fff;">What We Do</h2>
   <p class="services-intro">
-    Four core service lines, each grounded in two decades of hands-on
+    Five core service lines, each grounded in two decades of hands-on
     experience at the intersection of law, compliance, and alternative investments.
   </p>
   <div class="services-grid">
@@ -1212,7 +1575,7 @@ footer {
       <p class="service-desc">
         Serve as designated CCO of record for SEC-registered investment advisers.
         Full compliance program management, annual reviews, regulatory filings,
-        and ongoing monitoring — all backed by legal training.
+        and ongoing monitoring — all backed by legal training and two decades of CCO experience.
       </p>
       <div class="service-tags">
         <span class="service-tag">CCO of Record</span>
@@ -1226,17 +1589,54 @@ footer {
       <div class="service-name">Operational Due Diligence (ODD)</div>
       <p class="service-desc">
         Independent ODD assessments for allocators evaluating hedge funds and
-        private equity managers. Governance, risk controls, compliance
-        infrastructure, and operational integrity reviews.
+        private equity managers. Full-spectrum coverage: governance, regulatory
+        infrastructure, risk controls, cybersecurity, and operational integrity —
+        with initial and ongoing monitoring programs.
       </p>
       <div class="service-tags">
         <span class="service-tag">Governance Review</span>
         <span class="service-tag">Risk Controls</span>
+        <span class="service-tag">Cybersecurity</span>
         <span class="service-tag">Operational Integrity</span>
       </div>
+      <a href="#odd" class="service-link">Learn More &rarr;</a>
     </div>
     <div class="service-item">
       <div class="service-num">03</div>
+      <div class="service-name">General Compliance Services</div>
+      <p class="service-desc">
+        Comprehensive compliance services for registered investment advisers —
+        from SEC registration and program buildout to annual reviews, marketing
+        rule compliance, AML/KYC, examination preparation, and AI governance.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">Form ADV</span>
+        <span class="service-tag">Marketing Rule</span>
+        <span class="service-tag">AML/KYC</span>
+        <span class="service-tag">Exam Prep</span>
+        <span class="service-tag">AI Governance</span>
+      </div>
+      <a href="#compliance" class="service-link">Learn More &rarr;</a>
+    </div>
+    <div class="service-item service-highlight">
+      <div class="service-num">04</div>
+      <div class="service-name">LGRC Transformation</div>
+      <p class="service-desc">
+        End-to-end transformation of Legal, Governance, Risk &amp; Compliance functions
+        for regulated enterprises. Operating model design, org restructure, process
+        redesign, and hands-on implementation — led by a senior operator who has
+        done this work at scale.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">Operating Model</span>
+        <span class="service-tag">Org Design</span>
+        <span class="service-tag">Process Redesign</span>
+        <span class="service-tag">Digital Transformation</span>
+      </div>
+      <a href="#lgrc" class="service-link">Learn More &rarr;</a>
+    </div>
+    <div class="service-item">
+      <div class="service-num">05</div>
       <div class="service-name">SEC Registration &amp; RIA Formation</div>
       <p class="service-desc">
         End-to-end support for investment advisers registering with the SEC.
@@ -1250,24 +1650,259 @@ footer {
         <span class="service-tag">Code of Ethics</span>
       </div>
     </div>
-    <div class="service-item">
-      <div class="service-num">04</div>
-      <div class="service-name">Compliance Program Build-Out</div>
-      <p class="service-desc">
-        Design and implement institutional-grade compliance programs for emerging
-        and established managers. Policies, procedures, surveillance systems,
-        training, and audit readiness.
-      </p>
-      <div class="service-tags">
-        <span class="service-tag">Policies &amp; Procedures</span>
-        <span class="service-tag">Training</span>
-        <span class="service-tag">Audit Readiness</span>
+  </div>
+</section>
+
+<!-- ODD SECTION -->
+<div class="gold-rule"></div>
+<section class="odd-section" id="odd">
+  <div class="section-label">Operational Due Diligence</div>
+  <h2 class="section-title">Independent. Rigorous. <em>Built for How Allocators Actually Work.</em></h2>
+
+  <p class="odd-intro">
+    Allocators today face a more demanding operational environment than ever before. Regulatory scrutiny
+    of managers has intensified, investor expectations around risk governance have risen sharply, and the
+    consequences of operational failures — fraud, valuation manipulation, cybersecurity breaches — have
+    never been more visible. Operational due diligence is no longer a checkbox. It's a core investment discipline.
+  </p>
+  <p class="odd-intro" style="margin-top:-32px;">
+    Stony Creek GRC provides independent ODD services to institutional investors, family offices, funds of
+    funds, and advisory platforms allocating across alternative investment strategies — private equity, private
+    credit, hedge funds, real assets, and emerging managers.
+  </p>
+
+  <div class="section-label" style="margin-top:8px;">What We Assess</div>
+  <div class="odd-grid">
+    <div class="odd-card">
+      <div class="odd-card-title">Governance &amp; Organizational Structure</div>
+      <div class="odd-card-body">Ownership structure, key person risk, succession planning, and independence of oversight functions.</div>
+    </div>
+    <div class="odd-card">
+      <div class="odd-card-title">Regulatory &amp; Compliance Infrastructure</div>
+      <div class="odd-card-body">Registration status, compliance program design, regulatory history, examination findings, and CCO tenure and authority.</div>
+    </div>
+    <div class="odd-card">
+      <div class="odd-card-title">Risk Management Framework</div>
+      <div class="odd-card-body">Investment and operational risk controls, valuation policies, liquidity governance, and side pocket practices.</div>
+    </div>
+    <div class="odd-card">
+      <div class="odd-card-title">Finance &amp; Fund Administration</div>
+      <div class="odd-card-body">Administrator independence, NAV calculation controls, audit quality and relationships, and fee and expense practices.</div>
+    </div>
+    <div class="odd-card">
+      <div class="odd-card-title">Cybersecurity &amp; Data Governance</div>
+      <div class="odd-card-body">IT infrastructure, incident response protocols, third-party vendor risk, and alignment with SEC cybersecurity rules and Reg S-P.</div>
+    </div>
+    <div class="odd-card">
+      <div class="odd-card-title">Legal &amp; Regulatory Documents</div>
+      <div class="odd-card-body">Fund documents, side letters, investor rights, material contract review, and regulatory filing accuracy.</div>
+    </div>
+  </div>
+
+  <div class="section-label">How We Work</div>
+  <div class="odd-how-grid">
+    <div class="odd-how-block">
+      <div class="odd-how-label">Initial Assessments</div>
+      <div class="odd-how-title">Pre-Commitment ODD</div>
+      <div class="odd-how-body">
+        Comprehensive operational assessment conducted prior to initial commitment, providing allocators with
+        a clear, independent view of manager risk before capital is deployed. Deliverable includes a written
+        ODD report with findings and recommended follow-up items.
+      </div>
+    </div>
+    <div class="odd-how-block">
+      <div class="odd-how-label">Portfolio Monitoring</div>
+      <div class="odd-how-title">Ongoing ODD Programs</div>
+      <div class="odd-how-body">
+        Continuous monitoring throughout the life of an investment — tracking material changes in personnel,
+        regulatory status, risk controls, and operational infrastructure. For select clients, we also provide
+        co-sourced ODD support, working alongside internal teams using your procedures and templates.
+      </div>
+    </div>
+  </div>
+
+  <div class="odd-differentiator">
+    <p>
+      Our principal brings 20+ years of direct experience on the manager side — having built, run, and
+      transformed compliance and legal functions at globally regulated alternative investment firms.
+      <strong>We know what a well-run operation actually looks like from the inside. And we know exactly where corners get cut.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- GENERAL COMPLIANCE SERVICES -->
+<div class="gold-rule"></div>
+<section class="compliance-section" id="compliance">
+  <div class="section-label">General Compliance Services</div>
+  <h2 class="section-title">Compliance That Works <em>With Your Business.</em></h2>
+
+  <p class="compliance-intro">
+    No two funds are built the same way. At Stony Creek GRC, we don't apply a template — we design
+    compliance solutions that fit your structure, your strategy, and your regulatory footprint. We work
+    with registered investment advisers, private fund managers, and alternative investment firms navigating
+    SEC, CFTC, FINRA, FinCEN, and multi-jurisdictional requirements.
+  </p>
+
+  <div class="compliance-grid">
+    <div class="comp-card">
+      <div class="comp-card-title">Outsourced CCO</div>
+      <div class="comp-card-body">
+        For funds that need senior compliance leadership without a full-time hire, we serve as CCO of
+        record — providing active, accountable oversight rather than a name on a form. We attend committee
+        meetings, engage regulators, author your compliance calendar, and stand behind the program we design.
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-card-title">Compliance Program Design &amp; Buildout</div>
+      <div class="comp-card-body">
+        Whether you're registering for the first time or rebuilding a program that's outgrown its original
+        design, we draft the policies, procedures, and governance frameworks your firm needs — calibrated to
+        what regulators actually expect, not boilerplate.
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-card-title">Annual Reviews &amp; Ongoing Monitoring</div>
+      <div class="comp-card-body">
+        Rule 206(4)-7 requires a documented annual review of your compliance program. We conduct rigorous,
+        substantive reviews — forensic testing, gap analysis, and written findings — not box-checking exercises.
+        Ongoing monitoring keeps your program current as your firm and the regulatory environment evolve.
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-card-title">Examination Preparation &amp; Regulatory Response</div>
+      <div class="comp-card-body">
+        We prepare firms for SEC examinations before they happen, and manage the response process when
+        regulators are at the door — coordinating document production, preparing personnel, and engaging
+        directly with examiners. Backed by experience managing multi-agency examination tracks across
+        SEC, CFTC, FINRA, and FinCEN simultaneously.
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-card-title">Marketing Rule &amp; Disclosure Review</div>
+      <div class="comp-card-body">
+        Pre-publication review of fund materials under the SEC's 2022 marketing rule — performance
+        presentations, pitch books, DDQs, and investor communications. We also handle regulatory filings:
+        Form ADV, Form PF, Section 13, and blue sky compliance.
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-card-title">AML/KYC, Sanctions &amp; AI Governance</div>
+      <div class="comp-card-body">
+        Program design and ongoing monitoring for FinCEN/AML and OFAC obligations, including investor
+        onboarding workflows and screening protocols. As funds deploy AI tools across investment,
+        operations, and compliance functions, we also design the policy frameworks, risk assessment
+        protocols, and use-case governance structures regulators will expect to see.
       </div>
     </div>
   </div>
 </section>
 
+<!-- LGRC TRANSFORMATION -->
+<div class="gold-rule"></div>
+<section class="lgrc-section" id="lgrc">
+  <div class="section-label">LGRC Transformation</div>
+  <h2 class="section-title">When Incremental <em>Isn't Enough.</em></h2>
+
+  <p class="lgrc-intro">
+    Some compliance and legal functions need more than an annual tune-up. They need to be rebuilt.
+    Whether a firm has outgrown its original infrastructure, is integrating an acquisition, preparing
+    for a regulatory examination of real consequence, or simply recognizes that its Legal, Governance,
+    Risk &amp; Compliance function was never designed — it evolved — Stony Creek GRC provides the senior
+    operator to lead the transformation from the ground up.
+  </p>
+
+  <div class="lgrc-callout">
+    <p>
+      This is not a consulting engagement that produces a report. It's hands-on redesign and implementation,
+      led by a principal with 20+ years of direct experience doing exactly this work inside
+      <strong>regulated firms at scale.</strong>
+    </p>
+  </div>
+
+  <div class="section-label" style="color:var(--gold);">What End-to-End Transformation Means</div>
+  <div class="lgrc-grid">
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">01</div>
+      <div class="lgrc-item-title">Function Design &amp; Operating Model</div>
+      <div class="lgrc-item-body">
+        Assessment of current state — structure, roles, reporting lines, committee governance, policy
+        architecture — and design of the future-state function the firm actually needs. Includes
+        organizational design, mandate clarity, and the governance frameworks that make the function work.
+      </div>
+    </div>
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">02</div>
+      <div class="lgrc-item-title">Core Process Redesign</div>
+      <div class="lgrc-item-body">
+        AML/KYC, conflicts of interest, valuations, disclosures, outside counsel management, and regulatory
+        filings — mapped, rationalized, and rebuilt with scalable workflows and documentation standards
+        that hold up under examination.
+      </div>
+    </div>
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">03</div>
+      <div class="lgrc-item-title">Regulatory Infrastructure Build</div>
+      <div class="lgrc-item-body">
+        Multi-regulator environments require deliberate design. We build the full infrastructure — policies,
+        procedures, monitoring protocols, training programmes, exam readiness frameworks — across SEC, CFTC,
+        FINRA, FinCEN, OFAC, and applicable international regimes.
+      </div>
+    </div>
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">04</div>
+      <div class="lgrc-item-title">Digital &amp; Legal Tech Integration</div>
+      <div class="lgrc-item-body">
+        Deployment of AI and legal technology tools to digitize compliance functions, increase team
+        productivity, and embed risk management into firm culture as a proactive discipline — including
+        AI governance frameworks and cybersecurity/privacy compliance integration.
+      </div>
+    </div>
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">05</div>
+      <div class="lgrc-item-title">Stakeholder Engagement &amp; Change Management</div>
+      <div class="lgrc-item-body">
+        Transformation programmes succeed or fail at the top. We engage General Counsel, CFO, and
+        Board-level stakeholders directly — authoring committee governance materials, leading working
+        groups, and managing the change process across the organisation.
+      </div>
+    </div>
+    <div class="lgrc-item">
+      <div class="lgrc-item-num">06</div>
+      <div class="lgrc-item-title">Globally Aligned, US-Led Delivery</div>
+      <div class="lgrc-item-body">
+        Delivery of a globally coherent model with strong emphasis on US regulatory environment — drawing
+        on direct experience operating across US, UK, Hong Kong, Switzerland, Dubai, and Japan within
+        complex, multi-jurisdictional regulatory frameworks.
+      </div>
+    </div>
+  </div>
+
+  <div class="lgrc-who">
+    <div class="lgrc-who-label">Who This Engagement Is For</div>
+    <div class="lgrc-who-body">
+      This engagement is suited to firms undergoing significant change: rapid AUM growth, geographic
+      expansion, a first institutional capital raise, regulatory remediation, or leadership transition
+      in the legal or compliance function. It is also appropriate for firms that have never had a
+      dedicated LGRC build — where the function was run by the founder, a generalist, or outside
+      counsel — and where the gap between current state and institutional standard has become a liability.
+    </div>
+  </div>
+
+  <div class="lgrc-diff">
+    <div class="lgrc-diff-label">The Stony Creek GRC Difference</div>
+    <div class="lgrc-diff-body">
+      Daniel Dwyer built and transformed the LGRC function at Portfolio Advisors from approximately
+      $20B to $85B AUM over 12 years — designing the operating model, chairing the Compliance Committee,
+      directing multi-agency regulatory strategy across six regulators simultaneously, and leading the
+      firm's enterprise AI governance programme. He has held concurrent GC/CCO responsibility across
+      five regulated entities over a 20-year career, with direct accountability to founders, boards,
+      and regulators at each. He does not subcontract this work. He does it.
+    </div>
+  </div>
+</section>
+
 <!-- WHO WE SERVE -->
+<div class="gold-rule"></div>
 <section class="serve-section" id="clients">
   <div class="section-label">Clients</div>
   <h2 class="section-title">Who We <em>Serve</em></h2>
@@ -1370,7 +2005,7 @@ footer {
     <h2 class="contact-title">Ready to have a <em>conversation</em>?</h2>
     <p class="contact-body">
       Initial consultations are confidential and without obligation.
-      Reach out to discuss your compliance needs or ODD requirements.
+      Reach out to discuss your compliance needs, ODD requirements, or LGRC transformation.
     </p>
     <a href="mailto:ddwyer@stonycreekgrc.com" class="btn-primary">ddwyer@stonycreekgrc.com</a>
     <div class="contact-details">
@@ -1398,7 +2033,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand"><strong>SCGRC</strong> — Stony Creek, LLC</div>
+  <div class="footer-brand"><strong>SCGRC</strong> — Stony Creek GRC, LLC</div>
   <div class="footer-note">Confidential — Not for Distribution &nbsp;·&nbsp; &copy; 2026 Stony Creek GRC</div>
 </footer>
 
